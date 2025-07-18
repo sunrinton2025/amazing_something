@@ -47,11 +47,11 @@ TagManager:
   - name: object
     uniqueID: 3718150733
     locked: 0
-  - name: enemy
-    uniqueID: 2880326223
+  - name: fieldUI
+    uniqueID: 1421655827
     locked: 0
-  - name: player
-    uniqueID: 2123160681
+  - name: ui
+    uniqueID: 3535348087
     locked: 0
   m_RenderingLayers:
   - Default

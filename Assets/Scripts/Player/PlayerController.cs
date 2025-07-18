@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerAnimator))]
 [RequireComponent(typeof(PlayerCamera))]
+[RequireComponent(typeof(PlayerBattle))]
 [RequireComponent(typeof(StatController))]
 [RequireComponent(typeof(HealthObject))]
 public class PlayerController : MonoBehaviour
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public PlayerAnimator animator;
     public PlayerMovement movement;
     public PlayerCamera cam;
+    public PlayerBattle battle;
 
 
     void Awake()
@@ -24,12 +26,24 @@ public class PlayerController : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
         animator = GetComponent<PlayerAnimator>();
         cam = GetComponent<PlayerCamera>();
+        battle = GetComponent<PlayerBattle>();
 
     }
 
     void Update()
     {
         input.GetAxisRaw();
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            movement.Roll();
+            animator.Trigger("roll");
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            battle.Attack();
+        }
 
         // if (Input.GetKeyDown(KeyCode.Space))
         // {

@@ -1498,7 +1498,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 97
   m_Sprite: {fileID: -2185472608353246101, guid: f6d11ae74cf135d4fb59cda3eed44e9d, type: 3}
-  m_Color: {r: 0, g: 0.97990084, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.98039246, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -4825,10 +4825,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawner: {fileID: 0}
-  MaxEnemyCount: 60
-  MinEnemyCount: 30
+  MaxEnemyCount: 30
+  MinEnemyCount: 10
   EnemyList:
   - {fileID: 6151258047157021318, guid: 0088f7dae64eade469c769ac5a185be4, type: 3}
+  - {fileID: 3216435776081803938, guid: b2879f1c8d49d7647aa5f54d4fdbf1a3, type: 3}
   SpawnedEnemyList: []
 --- !u!114 &1042695769
 MonoBehaviour:
@@ -4993,6 +4994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076839172}
   - component: {fileID: 1076839173}
+  - component: {fileID: 1076839174}
   m_Layer: 0
   m_Name: map
   m_TagString: Untagged
@@ -5072,6 +5074,23 @@ MonoBehaviour:
   - {fileID: 1967825941}
   - {fileID: 711455881}
   - {fileID: 260561710}
+--- !u!114 &1076839174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076839171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6943ea6a97484ac47bb73b7c13927a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxGemCount: 15
+  MinGemCount: 5
+  GemList:
+  - {fileID: 4107311322515779257, guid: 4ffe457e7405db045bf4bef99cba8299, type: 3}
+  SpawnedGemList: []
 --- !u!1 &1190188209
 GameObject:
   m_ObjectHideFlags: 0
@@ -8772,11 +8791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5277563387425628198, guid: 05164671b26a37848af29a85cac68fce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.09
+      value: 2.68
       objectReference: {fileID: 0}
     - target: {fileID: 5277563387425628198, guid: 05164671b26a37848af29a85cac68fce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.07
+      value: -9.44
       objectReference: {fileID: 0}
     - target: {fileID: 5277563387425628198, guid: 05164671b26a37848af29a85cac68fce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8824,7 +8843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8992997910142534395, guid: 05164671b26a37848af29a85cac68fce, type: 3}
       propertyPath: m_SortingOrder
-      value: 70
+      value: 94
       objectReference: {fileID: 0}
     - target: {fileID: 8992997910142534395, guid: 05164671b26a37848af29a85cac68fce, type: 3}
       propertyPath: m_SortingLayerID

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 44df492ca2de2a44db239af7fcde48e0
+guid: 9136354f16c79f046a9d74f0e8adb201
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1227564231286400416
-    second: "\uC81C\uBAA9 \uC5C6\uC74C_0"
+      213: 5601084914263436108
+    second: cry_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,40 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uC81C\uBAA9 \uC5C6\uC74C_0"
+      name: cry_0
       rect:
         serializedVersion: 2
-        x: 306
-        y: 15
-        width: 181
-        height: 215
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 242
+        y: 0
+        width: 171
+        height: 445
+      alignment: 9
+      pivot: {x: 0.46783626, y: 0.11235955}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06ad237e5d0d6fee0800000000000000
-      internalID: -1227564231286400416
+      spriteID: c4ba87fbd0d0bbd40800000000000000
+      internalID: 5601084914263436108
       vertices: []
       indices: 
       edges: []
@@ -138,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 67b22f4a173136a4d972dbc536d5e80b
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\uC81C\uBAA9 \uC5C6\uC74C_0": -1227564231286400416
+      cry_0: 5601084914263436108
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -167,7 +167,6 @@ public class EnemyBehavior : MonoBehaviour
     // 피해 처리
     public void OnDamaged(Vector3 playerDirection)
     {
-        // 회피 로직 삭제, 공격만 처리하도록 간소화
         AttackPlayer();
     }
 }

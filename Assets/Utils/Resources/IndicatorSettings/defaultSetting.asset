@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb4994c494d33141810287c23eaea84, type: 3}
   m_Name: defaultSetting
   m_EditorClassIdentifier: 
-  font: {fileID: 11400000, guid: fd16ff2b3a3bdf5499677d3c5c688709, type: 2}
-  fontScale: 80
+  font: {fileID: 11400000, guid: bd42ff6d5fd2c634a947f0d65298f18a, type: 2}
+  fontScale: 140
   textLifeTime: 1
+  anim: 0
+  animScale: 1
+  sinRange: 0
+  sortingLayer: fieldUI
+  sortOrder: 0
+  useRealtime: 0
+  lookCamera: 0

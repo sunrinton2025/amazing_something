@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9061373062545771940}
   - component: {fileID: 8871540422364032966}
   - component: {fileID: 4868013630463944162}
-  - component: {fileID: 7134084318388458114}
+  - component: {fileID: 6232089797411262993}
   m_Layer: 5
   m_Name: CartList
   m_TagString: Untagged
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7134084318388458114
+--- !u!114 &6232089797411262993
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1285630253625022016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ba8b22bc71d92d4db63d4dd64e16e88, type: 3}
+  m_Script: {fileID: 11500000, guid: 74ce5f99ad73bf448a398fce134c478f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7988651580409732747

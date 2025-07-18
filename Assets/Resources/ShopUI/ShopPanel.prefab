@@ -528,6 +528,7 @@ MonoBehaviour:
   cartList: {fileID: 4289653156740150355}
   cartItemPrefab: {fileID: 1285630253625022016, guid: 689d14cdb8a071b459d9d58a84989843, type: 3}
   energyDisplay: {fileID: 527900468646779065}
+  queueManager: {fileID: 0}
 --- !u!1 &2425940117641064894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,7 +1043,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7150832597885365454}
   m_HandleRect: {fileID: 969920084549256070}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

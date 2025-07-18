@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 651049cb23b33694a9cf3d43ac696a5b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7285812645241504812
+    second: boss_A_0
+  - first:
+      213: 788063711296523794
+    second: boss_A_1
+  - first:
+      213: 8773885594718765395
+    second: boss_A_2
+  - first:
+      213: 4444478272565774579
+    second: boss_A_3
+  - first:
+      213: -8788461226852632054
+    second: boss_A_4
+  - first:
+      213: -7672186445668556259
+    second: boss_A_5
+  - first:
+      213: 271759500191474007
+    second: boss_A_6
+  - first:
+      213: -4943165027941886781
+    second: boss_A_7
+  - first:
+      213: 4446614911085873050
+    second: boss_A_8
+  - first:
+      213: 1343325869476763916
+    second: boss_A_9
+  - first:
+      213: -6788038626566836421
+    second: boss_A_10
+  - first:
+      213: -9040100258111972919
+    second: boss_A_11
+  - first:
+      213: -1281478528216907830
+    second: boss_A_12
+  - first:
+      213: -5295964538218891558
+    second: boss_A_13
+  - first:
+      213: -7299935163138635217
+    second: boss_A_14
+  - first:
+      213: -6877093769810205248
+    second: boss_A_15
+  - first:
+      213: 3398395199112469755
+    second: boss_A_16
+  - first:
+      213: -3609312101300486625
+    second: boss_A_17
+  - first:
+      213: 1696459082200719127
+    second: boss_A_18
+  - first:
+      213: 3631748469788496175
+    second: boss_A_19
+  - first:
+      213: -8565569718961287541
+    second: boss_A_20
+  - first:
+      213: -1663876289071268451
+    second: boss_A_21
+  - first:
+      213: 3410523326394765026
+    second: boss_A_22
+  - first:
+      213: 4788881343141498761
+    second: boss_A_23
+  - first:
+      213: 227016451192580150
+    second: boss_A_24
+  - first:
+      213: -1348003390672638718
+    second: boss_A_25
+  - first:
+      213: -7836884500120190915
+    second: boss_A_26
+  - first:
+      213: 3849916545615080189
+    second: boss_A_27
+  - first:
+      213: -1556887048525800574
+    second: boss_A_28
+  - first:
+      213: -7500838408774000284
+    second: boss_A_29
+  - first:
+      213: 8409536566476922324
+    second: boss_A_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boss_A_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604109c41f6aef44f9951f302ef7952d
+      internalID: -546455714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_A_1
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1494e5a7858e06047b58500558c2d97e
+      internalID: 43877099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_A_2
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ceec46dcdbda584e863c5f0eababf00
+      internalID: -1276217755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_A_3
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef444fdf06f18a64dad9721813e64096
+      internalID: 1827615670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_A_4
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 720
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273192e30d246ea4d8347de30efc455a
+      internalID: -2095213517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c970a17a7de67f34888d4f4dd129d98d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      boss_A_0: -546455714
+      boss_A_1: 43877099
+      boss_A_2: -1276217755
+      boss_A_3: 1827615670
+      boss_A_4: -2095213517
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

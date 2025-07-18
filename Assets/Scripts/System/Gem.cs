@@ -21,6 +21,14 @@ public class Gem : MonoBehaviour
     void Update()
     {
         checkHealth();
+
+        if (healthObject.Health <= 0 && Vector2.Distance(transform.position, PlayerController.Local.transform.position) <= 4 && PlayerController.Local.holding == null)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                PlayerController.Local.holding = this;
+            }
+        }
     }
     void checkHealth()
     {

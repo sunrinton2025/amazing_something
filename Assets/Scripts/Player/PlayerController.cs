@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     public PlayerCamera cam;
     public PlayerBattle battle;
 
+    public Gem holding;
+    [SerializeField]
+    Vector2 holdoffset;
+
 
     void Awake()
     {
@@ -51,6 +55,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && Time.timeScale != 0)
         {
             battle.Pick();
+        }
+
+        (float minX, float maxX) = MapManager.Instance.GetXBoundsOfMaps();
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX + 6, maxX - 6), transform.position.y, transform.position.z);
+
+        if (holding != null)
+        {
+            holding.transform.position = Vector2.Lerp(holding.transform.position, (Vector2)transform.position + holdoffset, 5 * Time.deltaTime);
         }
     }
 

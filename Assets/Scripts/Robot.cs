@@ -1,5 +1,6 @@
 using System.Collections;
 using DG.Tweening;
+using minyee2913.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,11 +53,31 @@ public class Robot : MonoBehaviour
 
         if (Vector2.Distance(follow.transform.position, transform.position) <= 4)
         {
-            interaction.text = "[F] 상호작용";
+            if (PlayerController.Local.holding != null)
+            {
+                interaction.text = "[F] 광물 담기";
+            }
+            else
+            {
+                interaction.text = "[F] 선택창 열기";
+            }
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                OpenShop();
+                if (PlayerController.Local.holding != null)
+                {
+                    PlayerController.Local.holding.transform.DOMove(transform.position, 0.3f);
+                    Destroy(PlayerController.Local.holding.gameObject, 0.4f);
+
+                    GameManager.Instance.point += 50;
+                    IndicatorManager.Instance.GenerateText("+50pt", transform.position + new Vector3(0, 2.5f), Color.cyan);
+
+                    PlayerController.Local.holding = null;
+                }
+                else
+                {
+                    OpenShop();
+                }
             }
         }
         else

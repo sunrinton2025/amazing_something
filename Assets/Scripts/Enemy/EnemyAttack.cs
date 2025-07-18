@@ -4,12 +4,14 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     public HealthObject health;
+    RangeController range;
     public Animator animator;
 
     void Start()
     {
         health = GetComponent<HealthObject>();
         animator = GetComponent<Animator>();
+        range = GetComponent<RangeController>();
 
         health.OnDamageFinal(onHurtFinal);
         health.OnDeath(onDeath);
@@ -29,7 +31,16 @@ public class EnemyAttack : MonoBehaviour
 
     public void Attack()
     {
-        //animator.SetTrigger("Attack");
+        foreach (Transform target in range.GetHitInRange2D(range.GetRange("attack"), LayerMask.GetMask("player")))
+        {
+            HealthObject hp = target.GetComponent<HealthObject>();
+
+            if (hp != null)
+            {
+                hp.GetDamage(10, health, HealthObject.Cause.Melee);
+            }
+        }
+        animator.SetTrigger("Attack");
         //Debug.Log("attack");
         // 공격 로직은 여기 추가 (ex. 데미지 계산, 이펙트 등)
     }

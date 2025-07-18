@@ -67,6 +67,7 @@ public class Robot : Singleton<Robot>
             {
                 if (PlayerController.Local.holding != null)
                 {
+                    PlayerController.Local.animator.Trigger("throw");
                     PlayerController.Local.holding.transform.DOMove(transform.position, 0.3f);
                     Destroy(PlayerController.Local.holding.gameObject, 0.4f);
 

@@ -65,6 +65,8 @@ public class PlayerController : MonoBehaviour
         {
             holding.transform.position = Vector2.Lerp(holding.transform.position, (Vector2)transform.position + holdoffset, 5 * Time.deltaTime);
         }
+
+        animator.animator.SetBool("isHolding", holding != null);
     }
 
     void FixedUpdate()

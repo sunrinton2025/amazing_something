@@ -177,8 +177,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -576816563
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7691294901476699688, guid: 7c67b0b0f811f384096d61b6a5e12b8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -988,6 +988,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 0}
   range: {fileID: 0}
+  spaceship: {fileID: 0}
+  laser_: {fileID: 0}
+  hp: {fileID: 0}
 --- !u!1 &803803676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1713,22 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 142716038455947970, guid: 5a08e714e8577774c922b416e4b143b4, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 142716038455947970, guid: 5a08e714e8577774c922b416e4b143b4, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -576816563
+      objectReference: {fileID: 0}
+    - target: {fileID: 5163750385110009934, guid: 5a08e714e8577774c922b416e4b143b4, type: 3}
+      propertyPath: canbus
+      value: 
+      objectReference: {fileID: 1913583168}
+    - target: {fileID: 5163750385110009934, guid: 5a08e714e8577774c922b416e4b143b4, type: 3}
+      propertyPath: rocket
+      value: 
+      objectReference: {fileID: 40751330}
     - target: {fileID: 5999839190673157434, guid: 5a08e714e8577774c922b416e4b143b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.2
@@ -1807,6 +1826,8 @@ MonoBehaviour:
   boss: {fileID: 1274503534}
   rocket: {fileID: 0}
   canbus: {fileID: 0}
+  squares: []
+  patternChangeInterval: 3
 --- !u!1 &1725982264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,7 +2274,7 @@ SceneRoots:
   - {fileID: 1076839172}
   - {fileID: 608066248}
   - {fileID: 1248395857}
-  - {fileID: 300428534}
   - {fileID: 1274503533}
   - {fileID: 1251956946}
   - {fileID: 40751332}
+  - {fileID: 300428534}

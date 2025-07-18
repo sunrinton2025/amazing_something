@@ -30,8 +30,13 @@ public class PlayerBattle : MonoBehaviour
         animator = GetComponent<PlayerAnimator>();
         rigid = GetComponent<Rigidbody2D>();
         movement = GetComponent<PlayerMovement>();
+
+        health.OnDamageFinal(onHurtFinal);
     }
 
+    void onHurtFinal(HealthObject.OnDamageFinalEv ev) {
+        IndicatorManager.Instance.GenerateText(ev.Damage.ToString(), transform.position + new Vector3(Random.Range(-2, 2), Random.Range(1, 2)), Color.red);
+    }
     void Update()
     {
         hp.value = health.Rate;
@@ -160,11 +165,11 @@ public class PlayerBattle : MonoBehaviour
                 targetPos = target.position;
             }
         }
-        spaceship.transform.DOLocalMove(spacePos + new Vector2(0, 300), 0.3f);
+        spaceship.transform.DOLocalMove(spacePos + new Vector2(0, 300), 0.8f);
 
         IndicatorManager.Instance.GenerateText("목표 지정", targetPos + new Vector2(0, 1), Color.red);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
         CamEffector.current.Shake(6);
 
@@ -182,6 +187,6 @@ public class PlayerBattle : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        spaceship.transform.DOLocalMove(spacePos, 0.3f);
+        spaceship.transform.DOLocalMove(spacePos, 1f);
     }
 }

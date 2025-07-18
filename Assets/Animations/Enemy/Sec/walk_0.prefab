@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6925324013971726347}
   - component: {fileID: 4463145466025963031}
   - component: {fileID: -716404909536495424}
+  - component: {fileID: -5282040883247386961}
   m_Layer: 3
   m_Name: walk_0
   m_TagString: Untagged
@@ -78,8 +79,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -576816563
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1127542385, guid: 31e8ebdc2348e4e44b2dd183338424aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -196,3 +197,24 @@ MonoBehaviour:
   Health: 60
   isDeath: 0
   SyncToStat: 0
+--- !u!114 &-5282040883247386961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3216435776081803938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a336a0f8e6f6064459b42aa545e3a461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {fileID: 0}
+  useForward: 0
+  ranges:
+  - Name: attack
+    offset: {x: 0, y: 0, z: 0}
+    size: {x: 9.81, y: 6.15, z: 1.15}
+    ShowGizmos: 1
+    GizmosColor: {r: 1, g: 0, b: 0, a: 1}
+    shape: 0

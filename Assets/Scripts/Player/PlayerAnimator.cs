@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    Animator animator;
+    public Animator animator;
     SpriteRenderer render;
     public int direction;
 

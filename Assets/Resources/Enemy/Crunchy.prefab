@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8107264726312702648}
   - component: {fileID: -5779859719177680270}
   - component: {fileID: 4444927324343131973}
+  - component: {fileID: 1169735510351723492}
   m_Layer: 3
   m_Name: Crunchy
   m_TagString: Untagged
@@ -79,8 +80,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -576816563
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 2803955146950545069, guid: ba0fabf9583b9df4eb546cab6e37d211, type: 3}
   m_Color: {r: 1, g: 0.504717, b: 0.9339727, a: 1}
@@ -160,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bbac9c826da5e24cb0327d9461b29a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 0}
   animator: {fileID: 7711167077053962295}
 --- !u!114 &-5779859719177680270
 MonoBehaviour:
@@ -214,3 +216,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0.115775764, y: -0.17873786}
   m_Size: {x: 2.0880098, y: 2.4735446}
   m_Direction: 0
+--- !u!114 &1169735510351723492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151258047157021318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a336a0f8e6f6064459b42aa545e3a461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {fileID: 3069930685163133956}
+  useForward: 0
+  ranges:
+  - Name: attack
+    offset: {x: 0, y: 0, z: 0}
+    size: {x: 9.81, y: 6.33, z: 1.15}
+    ShowGizmos: 1
+    GizmosColor: {r: 1, g: 0, b: 0, a: 1}
+    shape: 0

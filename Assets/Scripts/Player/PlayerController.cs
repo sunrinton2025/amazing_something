@@ -47,6 +47,11 @@ public class PlayerController : MonoBehaviour
         {
             battle.Attack();
         }
+
+        if (Input.GetMouseButtonDown(1) && Time.timeScale != 0)
+        {
+            battle.Pick();
+        }
     }
 
     void FixedUpdate()

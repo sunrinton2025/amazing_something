@@ -1,8 +1,10 @@
 using System.Collections;
+using minyee2913.Utils;
 using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    HealthObject health;
     public float detectDist = 5f;           // 기본 탐지 거리
     public float extendedDetectDist = 10f;  // 플레이어가 탐지 거리 내에 들어오면 확장되는 탐지 거리
     public float attackRange = 2f;          // 공격 범위
@@ -25,10 +27,25 @@ public class EnemyBehavior : MonoBehaviour
         currentDetectDist = detectDist;
 
         spawnedPos = transform.position;
+
+        health = GetComponent<HealthObject>();
+        health.OnDamage(onDamage);
+    }
+
+    void onDamage(HealthObject.OnDamageEv ev) {
+        if (!isActive)
+        {
+            ev.cancel = true;
+        }
     }
 
     void Update()
     {
+        if (health.isDeath)
+        {
+            return;
+        }
+        
         HandleStopMove();
         HandleDetectionAndChase();
         UpdateOrientation();

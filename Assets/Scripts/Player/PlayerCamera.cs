@@ -34,7 +34,7 @@ public class PlayerCamera : MonoBehaviour
         }
         else
         {
-            if (Vector2.Distance(locked, follow) > 10)
+            if (Vector2.Distance(locked, follow) > 8)
             {
                 locked = follow;
                 following = true;
@@ -44,7 +44,7 @@ public class PlayerCamera : MonoBehaviour
         cam.transform.position = Vector3.Lerp(
             cam.transform.position,
             new Vector3(locked.x, locked.y, cam.transform.position.z),
-            4 * Time.deltaTime);
+            Time.deltaTime * 1.25f);
     }
 
     void OnDrawGizmos()

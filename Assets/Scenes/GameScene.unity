@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 300428533}
   - component: {fileID: 300428532}
   - component: {fileID: 300428531}
+  - component: {fileID: 300428535}
   m_Layer: 0
   m_Name: robot
   m_TagString: Untagged
@@ -285,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follow: {fileID: 652172663}
-  offset: {x: 0, y: 0}
+  offset: {x: -0.63, y: -2.47}
   interaction: {fileID: 1190188210}
 --- !u!114 &300428532
 MonoBehaviour:
@@ -342,9 +343,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -576816563
   m_SortingLayer: 2
-  m_SortingOrder: 91
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0, g: 0.7038722, b: 1, a: 1}
+  m_SortingOrder: 97
+  m_Sprite: {fileID: 21300000, guid: f6d11ae74cf135d4fb59cda3eed44e9d, type: 3}
+  m_Color: {r: 0, g: 0.97990084, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -363,13 +364,36 @@ Transform:
   m_GameObject: {fileID: 300428530}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.25, y: -9.13, z: 0}
-  m_LocalScale: {x: 1.9174, y: 1.9174, z: 1.9174}
+  m_LocalPosition: {x: -12.74, y: -9.71, z: 0}
+  m_LocalScale: {x: 1.9361905, y: 1.9361905, z: 1.9361905}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 803803677}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &300428535
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300428530}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.6
+  m_Height: 7.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &395053474
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +1013,20 @@ MonoBehaviour:
     ShowGizmos: 1
     GizmosColor: {r: 1, g: 0, b: 0, a: 1}
     shape: 0
+--- !u!114 &652172675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652172661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e68172b24d1e8409651b6412f8325f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  range: {fileID: 0}
 --- !u!1 &803803676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,7 +1063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.06, y: 1.69}
+  m_AnchoredPosition: {x: 0.06, y: 1.88}
   m_SizeDelta: {x: 41.047, y: 10.3685}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &803803678
@@ -1808,6 +1846,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8158006671332441247, guid: 05164671b26a37848af29a85cac68fce, type: 3}
+      propertyPath: rollTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158006671332441247, guid: 05164671b26a37848af29a85cac68fce, type: 3}
+      propertyPath: rollPower
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8992997910142534395, guid: 05164671b26a37848af29a85cac68fce, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -1830,6 +1876,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1279251915845674077, guid: 05164671b26a37848af29a85cac68fce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 652172674}
+    - targetCorrespondingSourceObject: {fileID: 1279251915845674077, guid: 05164671b26a37848af29a85cac68fce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 652172675}
   m_SourcePrefab: {fileID: 100100000, guid: 05164671b26a37848af29a85cac68fce, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

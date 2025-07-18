@@ -4,7 +4,7 @@ public class PlayerAnimator : MonoBehaviour
 {
     Animator animator;
     SpriteRenderer render;
-    int direction;
+    public int direction;
 
     void Awake()
     {
@@ -20,9 +20,14 @@ public class PlayerAnimator : MonoBehaviour
     public void SetDirection(int val)
     {
         if (val < 0)
-            render.flipX = true;
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
         else if (val > 0)
-            render.flipX = false;
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y);
         direction = val;
+    }
+
+    public void Trigger(string val)
+    {
+        animator.SetTrigger(val);
     }
 }

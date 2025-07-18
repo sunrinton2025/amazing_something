@@ -6,9 +6,10 @@ public class EnemyAttack : MonoBehaviour
     public HealthObject health;
     public Animator animator;
 
-    void Awake()
+    void Start()
     {
         health = GetComponent<HealthObject>();
+        animator = GetComponent<Animator>();
 
         health.OnDamageFinal(onHurtFinal);
         health.OnDeath(onDeath);

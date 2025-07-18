@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3130758496430698720}
   - component: {fileID: 6925324013971726347}
   - component: {fileID: 4463145466025963031}
+  - component: {fileID: -716404909536495424}
   m_Layer: 3
   m_Name: walk_0
   m_TagString: Untagged
@@ -179,3 +180,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.036248367, y: 0.5146472}
   m_Radius: 1.3978521
+--- !u!114 &-716404909536495424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3216435776081803938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ff84d623a8ff249aa2ee6f31887a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 60
+  Health: 60
+  isDeath: 0
+  SyncToStat: 0

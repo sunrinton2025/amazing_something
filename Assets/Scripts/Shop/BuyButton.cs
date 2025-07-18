@@ -13,5 +13,13 @@ public class BuyButton : MonoBehaviour
     public void OnBuy()
     {
         cartManager.ConfirmPurchase();
+        Robot.Instance.CloseShop();
+
+        cartManager.cart.Clear();
+        foreach (var a in cartManager.objs)
+        {
+            Destroy(a);
+        }
+        cartManager.objs.Clear();
     }
 }

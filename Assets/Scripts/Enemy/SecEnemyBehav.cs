@@ -30,6 +30,8 @@ public class SecEnemyBehav : MonoBehaviour
         }
 
         MoveTowardsTarget();
+
+        SkewedBoundary2D.Instance.Apply(transform);
     }
 
     void MoveTowardsTarget()

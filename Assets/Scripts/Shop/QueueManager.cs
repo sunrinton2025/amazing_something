@@ -43,10 +43,13 @@ public class QueueManager : MonoBehaviour
     {
         if (queue.Count > 0)
         {
+            string name = queue.Peek().itemName;
             queue.Dequeue();
             Destroy(queueObjects[0]);
             queueObjects.RemoveAt(0);
-            if(queue.Count > 0)cooldownRemaining = queue.Peek().cooltime;
+            if (queue.Count > 0) cooldownRemaining = queue.Peek().cooltime;
+
+            PlayerController.Local.battle.CastSkill(name);
         }
     }
 

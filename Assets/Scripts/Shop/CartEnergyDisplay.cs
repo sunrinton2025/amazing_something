@@ -8,6 +8,11 @@ public class CartEnergyDisplay : MonoBehaviour
     public int totalEnergy = 100;
     private List<ShopItem> cart = new List<ShopItem>();
 
+    void Update()
+    {
+        totalEnergy = GameManager.Instance.point;
+    }
+
     public void SetCart(List<ShopItem> currentCart)
     {
         cart = currentCart;

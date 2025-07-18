@@ -1,6 +1,8 @@
 using System.Collections;
+using DG.Tweening;
 using minyee2913.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBattle : MonoBehaviour
 {
@@ -12,14 +14,27 @@ public class PlayerBattle : MonoBehaviour
 
     Cooldown atkCool = new(0.5f);
     Cooldown pickCool = new(0.6f);
+    [SerializeField]
+    Image spaceship;
+    Vector2 spacePos;
+    [SerializeField]
+    GameObject laser_;
+    [SerializeField]
+    Slider hp;
 
     void Awake()
     {
+        spacePos = spaceship.transform.localPosition;
         health = GetComponent<HealthObject>();
         range = GetComponent<RangeController>();
         animator = GetComponent<PlayerAnimator>();
         rigid = GetComponent<Rigidbody2D>();
         movement = GetComponent<PlayerMovement>();
+    }
+
+    void Update()
+    {
+        hp.value = health.Rate;
     }
 
     public void Attack()
@@ -123,5 +138,50 @@ public class PlayerBattle : MonoBehaviour
                 hp.GetDamage(2, health, HealthObject.Cause.Melee);
             }
         }
+    }
+
+    public void CastSkill(string name)
+    {
+        if (name == "레이저 빔")
+        {
+            StartCoroutine(laser());
+        }
+    }
+
+    IEnumerator laser()
+    {
+        Vector2 targetPos = transform.position;
+        foreach (Transform target in range.GetHitInRange2D(range.GetRange("area"), LayerMask.GetMask("damageable")))
+        {
+            HealthObject hp = target.GetComponent<HealthObject>();
+
+            if (hp != null)
+            {
+                targetPos = target.position;
+            }
+        }
+        spaceship.transform.DOLocalMove(spacePos + new Vector2(0, 300), 0.3f);
+
+        IndicatorManager.Instance.GenerateText("목표 지정", targetPos + new Vector2(0, 1), Color.red);
+
+        yield return new WaitForSeconds(0.5f);
+
+        CamEffector.current.Shake(6);
+
+        Destroy(Instantiate(laser_, targetPos, Quaternion.identity), 0.3f);
+
+        foreach (Transform target in range.GetHitInRangeFreely2D(targetPos, range.GetRange("skill"), LayerMask.GetMask("damageable")))
+        {
+            HealthObject hp = target.GetComponent<HealthObject>();
+
+            if (hp != null)
+            {
+                hp.GetDamage(21, health, HealthObject.Cause.Skill);
+            }
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        spaceship.transform.DOLocalMove(spacePos, 0.3f);
     }
 }

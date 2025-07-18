@@ -4,8 +4,9 @@ using minyee2913.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Robot : MonoBehaviour
+public class Robot : Singleton<Robot>
 {
+    protected override bool UseDontDestroyOnLoad => false;
     SpriteRenderer render;
     [SerializeField]
     Transform follow;
@@ -92,7 +93,7 @@ public class Robot : MonoBehaviour
                 CloseShop();
             }
 
-            interaction.text = "";
+            interaction.text = GameManager.Instance.point.ToString() + "pt";
         }
     }
 

@@ -29,6 +29,8 @@ public class Gem : MonoBehaviour
                 PlayerController.Local.holding = this;
             }
         }
+
+        SkewedBoundary2D.Instance.Apply(transform);
     }
     void checkHealth()
     {

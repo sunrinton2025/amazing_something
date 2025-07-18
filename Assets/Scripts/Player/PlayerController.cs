@@ -1,16 +1,32 @@
+using minyee2913.Utils;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerInput))]
+[RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(StatController))]
+[RequireComponent(typeof(HealthObject))]
 public class PlayerController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static PlayerController Local { get; private set; }
+    public PlayerInput input;
+    public PlayerMovement movement;
+
+
+    void Awake()
     {
-        
+        Local = this;
+        input = GetComponent<PlayerInput>();
+        movement = GetComponent<PlayerMovement>();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        input.GetAxisRaw();
+    }
+
+    void FixedUpdate()
+    {
+        movement.Move(input.axisRaw);
     }
 }

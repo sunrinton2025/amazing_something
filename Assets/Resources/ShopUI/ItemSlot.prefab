@@ -147,6 +147,8 @@ GameObject:
   - component: {fileID: 7422229378137704868}
   - component: {fileID: 8514525893707303948}
   - component: {fileID: 5969009725165915567}
+  - component: {fileID: 2318274963607196965}
+  - component: {fileID: 2592243680847787866}
   m_Layer: 5
   m_Name: ItemSlot
   m_TagString: Untagged
@@ -214,6 +216,39 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2318274963607196965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716580244416065263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ed46b6128be9b4cb63de62f070becd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  price: 0
+  icon: {fileID: 0}
+--- !u!114 &2592243680847787866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716580244416065263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a4eb61f5c1b55488c1d5f748696a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 2318274963607196965}
+  cartManager: {fileID: 0}
+  buttonObject: {fileID: 9058900816919841043}
+  iconImage: {fileID: 4451760557908258161}
+  nameText: {fileID: 3225449723526139037}
+  priceText: {fileID: 4747861445325430805}
 --- !u!1 &6057158757128043366
 GameObject:
   m_ObjectHideFlags: 0

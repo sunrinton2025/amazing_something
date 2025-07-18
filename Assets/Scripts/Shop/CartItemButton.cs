@@ -11,7 +11,7 @@ public class CartItemButton : MonoBehaviour
     {
         item = newItem;
         cartManager = manager;
-        GetComponentInChildren<TextMeshProUGUI>().text = item.itemName + " (" + item.price + "원)";
+        GetComponentInChildren<TextMeshProUGUI>().text = item.itemName + " (" + item.price + ")";
         GetComponent<Button>().onClick.AddListener(OnRemove);
     }
 

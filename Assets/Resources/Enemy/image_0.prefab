@@ -125,15 +125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d46ec9298aa52694eb0847714f8062e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectDist: 5
-  extendedDetectDist: 10
-  attackRange: 2
-  randomMoveTime: 3
+  detectDist: 10
+  extendedDetectDist: 15
+  attackRange: 4
   arriveThreshold: 0.5
   animator: {fileID: 7711167077053962295}
   enemyMovement: {fileID: -5804032779097988785}
   enemyAttack: {fileID: 8107264726312702648}
-  currentDetectDist: 0
 --- !u!114 &-5804032779097988785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fda90e8257f4d742a38ed66558b45ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  evadeSpeed: 5
+  moveSpeed: 1
+  evadeSpeed: 1
   roamRange: 5
   spriteRenderer: {fileID: 6780504733092182782}
 --- !u!114 &8107264726312702648

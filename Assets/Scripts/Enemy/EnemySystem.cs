@@ -31,8 +31,6 @@ public class EnemySystem : Singleton<EnemySystem>
 
     void Spawn()
     {
-        Debug.Log("spawn");
-
         for (int i = SpawnedEnemyList.Count; i < MaxEnemyCount; i++)
         {
             (float minX, float maxX) = MapManager.Instance.GetXBoundsOfMaps();
@@ -42,15 +40,8 @@ public class EnemySystem : Singleton<EnemySystem>
             int safetyCount = 0;
             while ((mapMinX <= randSpawnX && randSpawnX <= mapMaxX) && safetyCount < 100)
             {
-                Debug.Log("Looping...");
                 randSpawnX = Random.Range(minX, maxX);
                 safetyCount++;
-            }
-
-            if (safetyCount >= 100)
-            {
-                Debug.LogWarning("Spawn position generation failed: too close to camera.");
-                continue;
             }
             enemySpawner.Spawn(randSpawnX);
         }

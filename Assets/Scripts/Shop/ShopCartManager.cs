@@ -7,6 +7,7 @@ public class ShopCartManager : MonoBehaviour
     public Transform cartList;
     public GameObject cartItemPrefab;
     public CartEnergyDisplay energyDisplay;
+    public QueueManager queueManager;
 
     private List<ShopItem> cart = new List<ShopItem>();
 
@@ -22,6 +23,22 @@ public class ShopCartManager : MonoBehaviour
     {
         cart.Remove(item);
         Destroy(obj);
+        energyDisplay.SetCart(cart);
+    }
+
+    public void ConfirmPurchase()
+    {
+        foreach (var item in cart)
+        {
+            queueManager.EnqueueItem(item);
+        }
+
+        foreach (Transform child in cartList)
+        {
+            Destroy(child.gameObject);
+        }
+
+        cart.Clear();
         energyDisplay.SetCart(cart);
     }
 }

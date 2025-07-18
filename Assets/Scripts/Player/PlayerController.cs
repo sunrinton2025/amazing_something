@@ -30,6 +30,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         input.GetAxisRaw();
+
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     (float minX, float maxX) = MapManager.Instance.GetXBoundsOfMaps();
+        //     transform.position = MapManager.Instance.GetPosInMap(Random.Range(minX, maxX));
+        // }
     }
 
     void FixedUpdate()

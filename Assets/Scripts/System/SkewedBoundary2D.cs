@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(EdgeCollider2D))]
 public class SkewedBoundary2D : MonoBehaviour
 {
+    [SerializeField]
+    Transform center;
     [Header("꼭짓점(시계방향, 마지막은 자동으로 처음과 연결됨)")]
     public Vector2[] boundaryPoints = new Vector2[]
     {
@@ -54,8 +56,8 @@ public class SkewedBoundary2D : MonoBehaviour
 
         for (int i = 0; i < boundaryPoints.Length; i++)
         {
-            Vector2 a = boundaryPoints[i];
-            Vector2 b = boundaryPoints[(i + 1) % boundaryPoints.Length];
+            Vector2 a = boundaryPoints[i] + (Vector2)center.position;
+            Vector2 b = boundaryPoints[(i + 1) % boundaryPoints.Length] + (Vector2)center.position;
             Vector2 projected = ClosestPointOnSegment(point, a, b);
             float dist = Vector2.SqrMagnitude(projected - point);
             if (dist < minDist)
@@ -73,8 +75,8 @@ public class SkewedBoundary2D : MonoBehaviour
         int crossingNumber = 0;
         for (int i = 0; i < polygon.Length; i++)
         {
-            Vector2 a = polygon[i];
-            Vector2 b = polygon[(i + 1) % polygon.Length];
+            Vector2 a = polygon[i] + (Vector2)center.position;
+            Vector2 b = polygon[(i + 1) % polygon.Length] + (Vector2)center.position;
             if (((a.y > point.y) != (b.y > point.y)) &&
                 (point.x < (b.x - a.x) * (point.y - a.y) / (b.y - a.y) + a.x))
             {
@@ -100,8 +102,8 @@ public class SkewedBoundary2D : MonoBehaviour
         Gizmos.color = Color.cyan;
         for (int i = 0; i < boundaryPoints.Length; i++)
         {
-            Vector2 current = boundaryPoints[i];
-            Vector2 next = boundaryPoints[(i + 1) % boundaryPoints.Length];
+            Vector2 current = boundaryPoints[i] + (Vector2)center.position;
+            Vector2 next = boundaryPoints[(i + 1) % boundaryPoints.Length] + (Vector2)center.position;
             Gizmos.DrawLine(transform.TransformPoint(current), transform.TransformPoint(next));
         }
     }

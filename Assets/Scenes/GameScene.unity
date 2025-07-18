@@ -997,6 +997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a7895e3af966e41919bb26952dd12c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  center: {fileID: 467753839}
   boundaryPoints:
   - {x: -28.7, y: -16.19}
   - {x: 28.7, y: -16.2}
@@ -1211,6 +1212,14 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 467753838}
+    - target: {fileID: 1378293639041414981, guid: 05164671b26a37848af29a85cac68fce, type: 3}
+      propertyPath: differ
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378293639041414981, guid: 05164671b26a37848af29a85cac68fce, type: 3}
+      propertyPath: yOffset
+      value: -6.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5277563387425628198, guid: 05164671b26a37848af29a85cac68fce, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.09

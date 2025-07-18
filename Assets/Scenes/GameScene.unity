@@ -2815,10 +2815,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawner: {fileID: 0}
-  MaxEnemyCount: 60
-  MinEnemyCount: 30
+  MaxEnemyCount: 30
+  MinEnemyCount: 10
   EnemyList:
   - {fileID: 6151258047157021318, guid: 0088f7dae64eade469c769ac5a185be4, type: 3}
+  - {fileID: 3216435776081803938, guid: b2879f1c8d49d7647aa5f54d4fdbf1a3, type: 3}
   SpawnedEnemyList: []
 --- !u!114 &1042695769
 MonoBehaviour:
@@ -4341,7 +4342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5277563387425628198, guid: 05164671b26a37848af29a85cac68fce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.24
+      value: -9.44
       objectReference: {fileID: 0}
     - target: {fileID: 5277563387425628198, guid: 05164671b26a37848af29a85cac68fce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4389,7 +4390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8992997910142534395, guid: 05164671b26a37848af29a85cac68fce, type: 3}
       propertyPath: m_SortingOrder
-      value: 92
+      value: 94
       objectReference: {fileID: 0}
     - target: {fileID: 8992997910142534395, guid: 05164671b26a37848af29a85cac68fce, type: 3}
       propertyPath: m_SortingLayerID

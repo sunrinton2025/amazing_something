@@ -20,7 +20,5 @@ public class EnemyMovement : MonoBehaviour
 
         Vector2 moveDirection = axis.normalized * moveSpeed * Time.deltaTime;
         transform.Translate(moveDirection);
-
-
     }
 }

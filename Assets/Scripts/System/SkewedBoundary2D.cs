@@ -1,8 +1,10 @@
+using minyee2913.Utils;
 using UnityEngine;
 
 [RequireComponent(typeof(EdgeCollider2D))]
-public class SkewedBoundary2D : MonoBehaviour
+public class SkewedBoundary2D : Singleton<SkewedBoundary2D>
 {
+    protected override bool UseDontDestroyOnLoad => false;
     [SerializeField]
     Transform center;
     [Header("꼭짓점(시계방향, 마지막은 자동으로 처음과 연결됨)")]
@@ -32,6 +34,12 @@ public class SkewedBoundary2D : MonoBehaviour
             Vector2 projected = ProjectPointInside(target.position);
             target.position = new Vector3(projected.x, projected.y, target.position.z);
         }
+    }
+
+    public void Apply(Transform target)
+    {
+        Vector2 projected = ProjectPointInside(target.position);
+        target.position = new Vector3(projected.x, projected.y, target.position.z);
     }
 
     void SetEdgeCollider()

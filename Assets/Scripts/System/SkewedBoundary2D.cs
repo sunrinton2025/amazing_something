@@ -1,3 +1,4 @@
+using DG.Tweening;
 using minyee2913.Utils;
 using UnityEngine;
 
@@ -38,8 +39,14 @@ public class SkewedBoundary2D : Singleton<SkewedBoundary2D>
 
     public void Apply(Transform target)
     {
-        Vector2 projected = ProjectPointInside(target.position);
-        target.position = new Vector3(projected.x, projected.y, target.position.z);
+        float leftX = Camera.main.ViewportToWorldPoint(new Vector3(0, 0.5f, 0)).x;
+        float rightX = Camera.main.ViewportToWorldPoint(new Vector3(1, 0.5f, 0)).x;
+
+        if (target.transform.position.x > leftX && target.transform.position.x < rightX)
+        {
+            Vector2 projected = ProjectPointInside(target.position);
+            target.position = new Vector3(projected.x, projected.y, target.position.z);
+        }
     }
 
     void SetEdgeCollider()

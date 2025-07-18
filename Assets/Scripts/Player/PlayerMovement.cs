@@ -17,8 +17,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(Vector2 axis)
     {
-        moveDelta = axis.normalized * stat.GetResultValue("moveSpeed");
+        moveDelta = axis;
 
-        transform.Translate(moveDelta * Time.deltaTime);
+        moveDelta.y += axis.x * 0.08f;
+        moveDelta.x -= axis.y * 0.1f;
+
+        transform.Translate(moveDelta.normalized * stat.GetResultValue("moveSpeed") * Time.deltaTime);
     }
 }

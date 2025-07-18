@@ -17,4 +17,14 @@ public class PlayerInput : MonoBehaviour
 
         return axisRaw;
     }
+
+    public bool HasAxisRaw()
+    {
+        return Mathf.Abs(axisRaw.x) + Mathf.Abs(axisRaw.y) != 0;
+    }
+
+    public bool HasAxis()
+    {
+        return Mathf.Abs(axis.x) + Mathf.Abs(axis.y) != 0;
+    }
 }

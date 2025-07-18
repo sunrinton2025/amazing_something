@@ -80,4 +80,113 @@ public class MapManager : Singleton<MapManager>
         return (minX, maxX);
     }
 
+    public (float minX, float maxX) GetXBoundsInCamera()
+    {
+        Camera cam = Camera.main;
+        if (cam == null)
+        {
+            Debug.LogWarning("Main Camera not found.");
+            return (0, 0);
+        }
+
+        Vector3 bottomLeft = cam.ViewportToWorldPoint(new Vector3(0, 0, cam.nearClipPlane));
+        Vector3 topRight = cam.ViewportToWorldPoint(new Vector3(1, 1, cam.nearClipPlane));
+        Rect cameraRect = new Rect(
+            Mathf.Min(bottomLeft.x, topRight.x),
+            Mathf.Min(bottomLeft.y, topRight.y),
+            Mathf.Abs(topRight.x - bottomLeft.x),
+            Mathf.Abs(topRight.y - bottomLeft.y)
+        );
+
+        float minX = float.PositiveInfinity;
+        float maxX = float.NegativeInfinity;
+
+        foreach (var map in maps)
+        {
+            if (map == null) continue;
+
+            Vector2 size = map.size;
+            Vector2 offset = map.offset;
+            Vector2 half = size / 2f;
+
+            Vector2[] localCorners = new Vector2[4]
+            {
+                offset + new Vector2(-half.x, -half.y),
+                offset + new Vector2(-half.x,  half.y),
+                offset + new Vector2( half.x,  half.y),
+                offset + new Vector2( half.x, -half.y)
+            };
+
+            // 꼭짓점 → 월드 좌표
+            Vector2[] worldCorners = new Vector2[4];
+            for (int i = 0; i < 4; i++)
+                worldCorners[i] = map.transform.TransformPoint(localCorners[i]);
+
+            // 카메라 뷰 영역과 겹치는지 판단
+            if (!PolygonIntersectsRect(worldCorners, cameraRect))
+                continue;
+
+            foreach (var pt in worldCorners)
+            {
+                minX = Mathf.Min(minX, pt.x);
+                maxX = Mathf.Max(maxX, pt.x);
+            }
+        }
+
+        if (minX == float.PositiveInfinity || maxX == float.NegativeInfinity)
+        {
+            Debug.LogWarning("카메라 안에 포함된 맵 콜라이더가 없습니다.");
+            return (0f, 0f);
+        }
+
+        return (minX, maxX);
+    }
+
+
+    private bool PolygonIntersectsRect(Vector2[] polygon, Rect rect)
+    {
+        foreach (var point in polygon)
+        {
+            if (rect.Contains(point))
+                return true;
+        }
+
+        Vector2[] rectCorners = new Vector2[4]
+        {
+            new Vector2(rect.xMin, rect.yMin),
+            new Vector2(rect.xMax, rect.yMin),
+            new Vector2(rect.xMax, rect.yMax),
+            new Vector2(rect.xMin, rect.yMax)
+        };
+
+        for (int i = 0; i < 4; i++)
+        {
+            Vector2 a1 = rectCorners[i];
+            Vector2 a2 = rectCorners[(i + 1) % 4];
+
+            for (int j = 0; j < polygon.Length; j++)
+            {
+                Vector2 b1 = polygon[j];
+                Vector2 b2 = polygon[(j + 1) % polygon.Length];
+
+                if (LinesIntersect(a1, a2, b1, b2))
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+    // 선분 교차 여부
+    private bool LinesIntersect(Vector2 a1, Vector2 a2, Vector2 b1, Vector2 b2)
+    {
+        float d = (a2.x - a1.x) * (b2.y - b1.y) - (a2.y - a1.y) * (b2.x - b1.x);
+        if (Mathf.Approximately(d, 0)) return false;
+
+        float u = ((b1.x - a1.x) * (b2.y - b1.y) - (b1.y - a1.y) * (b2.x - b1.x)) / d;
+        float v = ((b1.x - a1.x) * (a2.y - a1.y) - (b1.y - a1.y) * (a2.x - a1.x)) / d;
+
+        return u >= 0 && u <= 1 && v >= 0 && v <= 1;
+    }
+
 }

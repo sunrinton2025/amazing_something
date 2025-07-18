@@ -33,7 +33,8 @@ public class PlayerController : MonoBehaviour
 
         // if (Input.GetKeyDown(KeyCode.Space))
         // {
-        //     (float minX, float maxX) = MapManager.Instance.GetXBoundsOfMaps();
+        //     //(float minX, float maxX) = MapManager.Instance.GetXBoundsOfMaps();
+        //     (float minX, float maxX) = MapManager.Instance.GetXBoundsInCamera();
         //     transform.position = MapManager.Instance.GetPosInMap(Random.Range(minX, maxX));
         // }
     }

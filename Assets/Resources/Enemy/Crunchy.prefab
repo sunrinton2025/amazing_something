@@ -14,8 +14,10 @@ GameObject:
   - component: {fileID: -3863901601705365989}
   - component: {fileID: -5804032779097988785}
   - component: {fileID: 8107264726312702648}
-  m_Layer: 0
-  m_Name: image_0
+  - component: {fileID: -5779859719177680270}
+  - component: {fileID: 4444927324343131973}
+  m_Layer: 3
+  m_Name: Crunchy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,9 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fda90e8257f4d742a38ed66558b45ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  evadeSpeed: 1
-  roamRange: 5
+  moveSpeed: 2
   spriteRenderer: {fileID: 6780504733092182782}
 --- !u!114 &8107264726312702648
 MonoBehaviour:
@@ -161,3 +161,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7711167077053962295}
+--- !u!114 &-5779859719177680270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151258047157021318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ff84d623a8ff249aa2ee6f31887a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 21
+  Health: 21
+  isDeath: 0
+  SyncToStat: 0
+--- !u!70 &4444927324343131973
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151258047157021318}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.21621132, y: 2.52}
+  m_Size: {x: 7.207039, y: 7.2}
+  m_Direction: 0

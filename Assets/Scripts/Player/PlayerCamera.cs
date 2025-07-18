@@ -44,7 +44,7 @@ public class PlayerCamera : MonoBehaviour
         cam.transform.position = Vector3.Lerp(
             cam.transform.position,
             new Vector3(locked.x, locked.y, cam.transform.position.z),
-            Time.deltaTime);
+            4 * Time.deltaTime);
     }
 
     void OnDrawGizmos()

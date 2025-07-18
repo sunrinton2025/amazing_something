@@ -16,10 +16,15 @@ public class EnemyBehavior : MonoBehaviour
     public Animator animator;
     public EnemyMovement enemyMovement;
     public EnemyAttack enemyAttack;
+    bool returning;
+
+    Vector2 spawnedPos;
 
     void Start()
     {
         currentDetectDist = detectDist;
+
+        spawnedPos = transform.position;
     }
 
     void Update()
@@ -27,6 +32,8 @@ public class EnemyBehavior : MonoBehaviour
         HandleStopMove();
         HandleDetectionAndChase();
         UpdateOrientation();
+
+        SkewedBoundary2D.Instance.Apply(transform);
     }
 
     // Stop move 시간 처리
@@ -50,12 +57,14 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
+    
+
     // 탐지 범위 내에 플레이어가 있을 때 추적 처리
     void HandleDetectionAndChase()
     {
         float distanceToPlayer = Vector3.Distance(PlayerController.Local.transform.position, transform.position);
 
-        if (distanceToPlayer <= currentDetectDist)
+        if (distanceToPlayer <= (isActive ? currentDetectDist + 10 : currentDetectDist))
         {
             if (!isActive)
                 ActivateEnemy();
@@ -93,10 +102,21 @@ public class EnemyBehavior : MonoBehaviour
     void ChasePlayer()
     {
         if (stopMove <= 0)
-            enemyMovement.Move(Vector2.MoveTowards(transform.position, PlayerController.Local.transform.position, Time.deltaTime));
+        {
+            Vector2 direction = (PlayerController.Local.transform.position - transform.position).normalized;
+            enemyMovement.Move(direction);
+        }
 
         animator.SetBool("isWalk", true);
         animator.SetBool("isAttack", false);
+    }
+
+    public static Vector2 MoveClamped(Vector2 from, Vector2 to, float maxDelta)
+    {
+        Vector2 dir = to - from;
+        float scale = Mathf.Max(Mathf.Abs(dir.x), Mathf.Abs(dir.y), 1f);
+        Vector2 capped = dir / scale;
+        return from + capped * Mathf.Min(maxDelta, 1f);
     }
 
     // 적 활성화
@@ -112,10 +132,15 @@ public class EnemyBehavior : MonoBehaviour
     // 마지막 위치로 이동 후 비활성화
     IEnumerator MoveToLastKnownPositionThenDeactivate()
     {
-        // 마지막 위치로 이동
-        while (Vector3.Distance(transform.position, lastKnownPlayerPosition) > arriveThreshold)
+        if (returning)
+            yield break;
+
+        returning = true;
+        while (Vector3.Distance(transform.position, spawnedPos) > 0.5f)
         {
-            enemyMovement.Move(Vector2.MoveTowards(transform.position, lastKnownPlayerPosition, Time.deltaTime));
+            Vector2 direction = (spawnedPos - (Vector2)transform.position).normalized;
+            enemyMovement.Move(direction);
+
             animator.SetBool("isWalk", true);
             yield return null;
         }

@@ -2815,8 +2815,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawner: {fileID: 0}
-  MaxEnemyCount: 3
-  MinEnemyCount: 1
+  MaxEnemyCount: 60
+  MinEnemyCount: 30
   EnemyList:
   - {fileID: 6151258047157021318, guid: 0088f7dae64eade469c769ac5a185be4, type: 3}
   SpawnedEnemyList: []

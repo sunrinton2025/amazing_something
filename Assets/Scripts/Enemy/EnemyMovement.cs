@@ -8,7 +8,6 @@ public class EnemyMovement : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     private bool canMove = false;
-    private Vector2 moveDelta;
 
     public void SetMovementEnabled(bool enabled)
     {
@@ -19,10 +18,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (!canMove) return;
 
-        moveDelta = axis;
-
-
-        Vector2 moveDirection = moveDelta.normalized * moveSpeed * Time.deltaTime;
+        Vector2 moveDirection = axis.normalized * moveSpeed * Time.deltaTime;
         transform.Translate(moveDirection);
 
 

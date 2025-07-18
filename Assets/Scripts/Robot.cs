@@ -20,6 +20,8 @@ public class Robot : MonoBehaviour
 
     void Update()
     {
+        SkewedBoundary2D.Instance.Apply(transform);
+        
         if (following)
         {
             if (Vector2.Distance(follow.transform.position, transform.position) < 6)

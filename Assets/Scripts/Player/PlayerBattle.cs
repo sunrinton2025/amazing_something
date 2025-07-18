@@ -7,6 +7,7 @@ public class PlayerBattle : MonoBehaviour
     public HealthObject health;
     public RangeController range;
     PlayerAnimator animator;
+    PlayerMovement movement;
     Rigidbody2D rigid;
 
     Cooldown atkCool = new(0.5f);
@@ -17,6 +18,7 @@ public class PlayerBattle : MonoBehaviour
         range = GetComponent<RangeController>();
         animator = GetComponent<PlayerAnimator>();
         rigid = GetComponent<Rigidbody2D>();
+        movement = GetComponent<PlayerMovement>();
     }
 
     public void Attack()
@@ -30,6 +32,7 @@ public class PlayerBattle : MonoBehaviour
 
     IEnumerator attack()
     {
+        movement.stopMove = 0.4f;
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (mousePos.x > transform.position.x)

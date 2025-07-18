@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 moveDelta;
     public float rollPower;
     public float rollTime;
+    public float stopMove;
 
     void Awake()
     {
@@ -18,8 +19,16 @@ public class PlayerMovement : MonoBehaviour
         stat = GetComponent<StatController>();
     }
 
+    void Update()
+    {
+        if (stopMove > 0)
+            stopMove -= Time.deltaTime;
+    }
+
     public void Move(Vector2 axis)
     {
+        if (stopMove > 0)
+            return;
         moveDelta = axis;
 
         moveDelta.y += axis.x * 0.08f;

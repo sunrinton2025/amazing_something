@@ -1,5 +1,8 @@
+using System.Collections.Generic;
 using minyee2913.Utils;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(PlayerMovement))]
@@ -40,17 +43,10 @@ public class PlayerController : MonoBehaviour
             animator.Trigger("roll");
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.timeScale != 0)
         {
             battle.Attack();
         }
-
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     //(float minX, float maxX) = MapManager.Instance.GetXBoundsOfMaps();
-        //     (float minX, float maxX) = MapManager.Instance.GetXBoundsInCamera();
-        //     transform.position = MapManager.Instance.GetPosInMap(Random.Range(minX, maxX));
-        // }
     }
 
     void FixedUpdate()
